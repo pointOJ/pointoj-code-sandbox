@@ -8,7 +8,7 @@ import com.point.pointcodesandbox.model.ExecuteCodeRequest;
 import com.point.pointcodesandbox.model.ExecuteCodeResponse;
 import com.point.pointcodesandbox.model.ExecuteMessage;
 import com.point.pointcodesandbox.model.JudgeInfo;
-
+import com.point.pointcodesandbox.utils.ProcessUtils;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+
 
 public class JavaNativeCodeSandboxOld implements CodeSandbox {
 
@@ -25,7 +26,7 @@ public class JavaNativeCodeSandboxOld implements CodeSandbox {
 
     private static final long TIME_OUT = 5000L;
 
-    private static final String SECURITY_MANAGER_PATH = "\\Users\\sue\\Documents\\pointProject\\point-code-sandbox\\src\\main\\resources\\security";
+    private static final String SECURITY_MANAGER_PATH = "C:\\code\\yuoj-code-sandbox\\src\\main\\resources\\security";
 
     private static final String SECURITY_MANAGER_CLASS_NAME = "MySecurityManager";
 
@@ -60,7 +61,7 @@ public class JavaNativeCodeSandboxOld implements CodeSandbox {
         String code = executeCodeRequest.getCode();
         String language = executeCodeRequest.getLanguage();
 
-       //  校验代码中是否包含黑名单中的命令
+        //  校验代码中是否包含黑名单中的命令
 //        FoundWord foundWord = WORD_TREE.matchWord(code);
 //        if (foundWord != null) {
 //            System.out.println("包含禁止词：" + foundWord.getFoundWord());
